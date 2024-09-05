@@ -1,3 +1,6 @@
+# Nome: João Pedro Pereira Balieiro
+# nUSP: 12676615
+
 # Método da Bisseção
 import math
 import matplotlib.pyplot as plt
@@ -10,6 +13,7 @@ def arredondar(x):
 # intervalo [a , b]
 a = 0
 b = 1
+raiz_exata = 2/3
 # tolerância
 tolerancia = 1e-6
 # número máximo de loop
@@ -43,7 +47,7 @@ while(xm2 != xm1):
     n = arredondar(n + 1.)
     xm2 = arredondar((a + b)/2)
     fxm = arredondar(f(xm2))
-    erro = arredondar(math.fabs(xm1 - xm2))
+    erro = arredondar(math.fabs(xm2 - raiz_exata))
     v = arredondar(fa*fxm)
     if v < 0: b = arredondar(xm2)
     if v > 0: a = arredondar(xm2)

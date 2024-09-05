@@ -1,3 +1,6 @@
+# Nome: João Pedro Pereira Balieiro
+# nUSP: 12676615
+
 import sympy as sp
 
 # Definir a variável simbólica
