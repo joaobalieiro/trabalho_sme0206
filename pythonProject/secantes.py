@@ -11,14 +11,14 @@ x0 = 0
 x1 = 1
 
 def arredondar(x):
-    return round(x, 6)
+    return round(x, 8)
 
 # Definição da função f(x) e sua derivada f'(x)
 def f(x):
     return 63*x**5 - 381*x**4 + 496*x**3 + 204*x**2 - 544*x + 192
 
 # Método das Secantes
-def secantes(f, x0, x1, tol=1e-6, max_iter=100):
+def secantes(f, x0, x1, max_iter=100):
     iteracoes = []
     x0, x1 = arredondar(x0), arredondar(x1)
     for k in range(max_iter):
@@ -44,5 +44,5 @@ if secantes_resultados:
         print("\nMétodo das Secantes (Intervalo [0, 1]):")
         print("Iteração |       x_k       |      f(x_k)     |       Erro")
         for it in resultados:
-            print(f"{it[0]:>8} | {it[1]:>13.6f} | {it[2]:>13.6f} | {it[3]:>13.6f}")
+            print(f"{it[0]:>8} | {it[1]:>13.8f} | {it[2]:>13.8f} | {it[3]:>13.8f}")
     print_resultados_secantes(secantes_resultados)

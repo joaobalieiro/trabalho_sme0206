@@ -9,7 +9,7 @@ import numpy as np
 raiz_exata = 12/7
 
 def arredondar(x):
-    return round(x, 6)
+    return round(x, 8)
 
 # Definição da função f(x) e sua derivada f'(x)
 def f(x):
@@ -40,11 +40,11 @@ def newton(f, df, x0, max_iter=100):
     return iteracoes
 
 # Tabela do Método de Newton
-newton_resultados = newton(f, df, 1.5) # Trocar 1.5 para 0.5 quando o intervalo for [0,1]
+newton_resultados = newton(f, df, 2) # Trocar 2 para 1 quando o intervalo for [0,1]
 if newton_resultados:
     def print_resultados_newton(resultados):
-        print("\nMétodo de Newton (Intervalo [0, 1]):")
+        print("\nMétodo de Newton (Intervalo [1, 2]):")
         print("Iteração |       x_k       |      f(x_k)     |      f'(x_k)    |       Erro")
         for it in resultados:
-            print(f"{it[0]:>8} | {it[1]:>13.6f} | {it[2]:>13.6f} | {it[3]:>13.6f} | {it[4]:>13.6f}")
+            print(f"{it[0]:>8} | {it[1]:>13.8f} | {it[2]:>13.8f} | {it[3]:>13.8f} | {it[4]:>13.8f}")
     print_resultados_newton(newton_resultados)

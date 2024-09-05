@@ -12,7 +12,7 @@ def f(x):
 
 # Arredondar para 6 casas decimais
 def arredondar(x):
-    return round(x, 6)
+    return round(x, 8)
 
 # Método da Falsa Posição
 def falsa_posicao(f, a, b, max_iter=100):
@@ -55,5 +55,5 @@ if falsa_posicao_resultados:
         print("\nMétodo da Falsa Posição (Intervalo [1, 2]):")
         print("Iteração |       a       |       b       |       x_k       |      f(x_k)     |       Erro")
         for it in resultados:
-            print(f"{it[0]:>8} | {it[1]:>12.6f} | {it[2]:>12.6f} | {it[3]:>13.6f} | {it[4]:>13.6f} | {it[5]:>13.6f}")
+            print(f"{it[0]:>8} | {it[1]:>12.8f} | {it[2]:>12.8f} | {it[3]:>13.8f} | {it[4]:>13.8f} | {it[5]:>13.8f}")
     print_resultados_falsa_posicao(falsa_posicao_resultados)
