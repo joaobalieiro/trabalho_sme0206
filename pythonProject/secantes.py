@@ -28,7 +28,7 @@ def secantes(f, x0, x1, max_iter=100):
             print("Divisão por zero. Método das Secantes falhou.")
             return None
         x_new = arredondar(x1 - fx1 * (x1 - x0) / (fx1 - fx0))
-        erro = arredondar(x1 - raiz_exata)
+        erro = x1 - raiz_exata
         iteracoes.append((k, x1, fx1, erro))
         if x1 == x_new:
             iteracoes.append((k + 1, x_new, arredondar(f(x_new)), x_new-raiz_exata))
@@ -44,5 +44,5 @@ if secantes_resultados:
         print("\nMétodo das Secantes (Intervalo [0, 1]):")
         print("Iteração |       x_k       |      f(x_k)     |       Erro")
         for it in resultados:
-            print(f"{it[0]:>8} | {it[1]:>13.8f} | {it[2]:>13.8f} | {it[3]:>13.8f}")
+            print(f"{it[0]:>8} | {it[1]:>13.8f} | {it[2]:>13.8f} | {it[3]:>13.10f}")
     print_resultados_secantes(secantes_resultados)

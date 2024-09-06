@@ -29,7 +29,7 @@ def falsa_posicao(f, a, b, max_iter=100):
         fb = arredondar(f(b))
         x_new = arredondar(b - fb * (b - a) / (fb - fa))
         # Calcula o erro em relação à raiz exata
-        erro = arredondar(x_new - raiz_exata)
+        erro = x_new - raiz_exata
         iteracoes.append((k, a, b, x_new, arredondar(f(x_new)), erro))
 
         # Critério de parada: se a nova estimativa for igual à anterior (considerando arredondamento)
@@ -55,5 +55,5 @@ if falsa_posicao_resultados:
         print("\nMétodo da Falsa Posição (Intervalo [1, 2]):")
         print("Iteração |       a       |       b       |       x_k       |      f(x_k)     |       Erro")
         for it in resultados:
-            print(f"{it[0]:>8} | {it[1]:>12.8f} | {it[2]:>12.8f} | {it[3]:>13.8f} | {it[4]:>13.8f} | {it[5]:>13.8f}")
+            print(f"{it[0]:>8} | {it[1]:>12.8f} | {it[2]:>12.8f} | {it[3]:>13.8f} | {it[4]:>13.8f} | {it[5]:>13.10f}")
     print_resultados_falsa_posicao(falsa_posicao_resultados)

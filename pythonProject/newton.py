@@ -30,7 +30,7 @@ def newton(f, df, x0, max_iter=100):
             print("Derivada zero. Método de Newton falhou.")
             return None
         x_new = arredondar(x - fx / dfx)
-        erro = arredondar(x - raiz_exata)
+        erro = x - raiz_exata
         iteracoes.append((k, x, fx, dfx, erro))
         if x == x_new:
             iteracoes.append((k + 1, x_new, arredondar(f(x_new)), arredondar(df(x_new)), erro))
@@ -46,5 +46,5 @@ if newton_resultados:
         print("\nMétodo de Newton (Intervalo [1, 2]):")
         print("Iteração |       x_k       |      f(x_k)     |      f'(x_k)    |       Erro")
         for it in resultados:
-            print(f"{it[0]:>8} | {it[1]:>13.8f} | {it[2]:>13.8f} | {it[3]:>13.8f} | {it[4]:>13.8f}")
+            print(f"{it[0]:>8} | {it[1]:>13.8f} | {it[2]:>13.8f} | {it[3]:>13.8f} | {it[4]:>13.10f}")
     print_resultados_newton(newton_resultados)

@@ -13,8 +13,11 @@ def df(x):
 
 # Arredondar para 6 casas decimais
 def arredondar(x):
-    return round(x, 6)
+    return round(x, 10)
 
+f = arredondar(63*0.66666831**5 - 381*0.66666831**4 + 496*0.66666831**3 + 204*0.66666831**2 - 544*0.66666831 + 192)
+f = arredondar(12/7)
+print(12/7)
 # Método da Bisseção
 def bissecao(f, a, b, tol=1e-6, max_iter=100):
     if f(a) * f(b) >= 0:

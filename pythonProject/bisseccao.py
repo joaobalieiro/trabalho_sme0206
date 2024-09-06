@@ -25,12 +25,11 @@ def bissecao(f, a, b, tol=1e-6, max_iter=100):
         # Calcula o ponto médio
         c = arredondar((a + b) / 2)
         # Calcula o erro em relação à raiz exata
-        erro = arredondar(abs(c - raiz_exata))
+        erro = abs(c - raiz_exata)
         iteracoes.append((k, a, b, c, arredondar(f(c)), erro))
 
         # Critério de parada: se o intervalo é suficientemente pequeno
-        if f(c) == 0 or (b - a) < tol:
-            # Repetir o último valor para mostrar que o resultado não muda
+        if f(c) == 0 or b == c or a == c:
             iteracoes.append((k + 1, a, b, c, arredondar(f(c)), erro))
             break
 
@@ -51,7 +50,7 @@ if bissecao_resultados:
         print("\nMétodo da Bisseção (Intervalo [0, 1]):")
         print("Iteração |       a       |       b       |       x_k       |      f(x_k)     |       Erro")
         for it in resultados:
-            print(f"{it[0]:>8} | {it[1]:>12.8f} | {it[2]:>12.8f} | {it[3]:>13.8f} | {it[4]:>13.8f} | {it[5]:>13.8f}")
+            print(f"{it[0]:>8} | {it[1]:>12.8f} | {it[2]:>12.8f} | {it[3]:>13.8f} | {it[4]:>13.8f} | {it[5]:>13.10f}")
     print_resultados_bissecao(bissecao_resultados)
 
 
