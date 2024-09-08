@@ -1,5 +1,7 @@
 # Nome: João Pedro Pereira Balieiro
 # nUSP: 12676615
+# Nome: Lucas Fernando Nishida Dias
+# nUSP: 8936436
 
 import sympy as sp
 import matplotlib.pyplot as plt

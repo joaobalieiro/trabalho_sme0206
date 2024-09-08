@@ -4,6 +4,32 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+# Definir a função e suas derivadas
+def f(x):
+    return 63 * x ** 5 - 381 * x ** 4 + 496 * x ** 3 + 204 * x ** 2 - 544 * x + 192
+
+def f_prime(x):
+    return 315 * x ** 4 - 1524 * x ** 3 + 1488 * x ** 2 + 408 * x - 544
+
+def f_double_prime(x):
+    return 1260 * x ** 3 - 4572 * x ** 2 + 2976 * x + 408
+
+
+# Função para calcular a taxa de convergência
+def taxa_convergencia_newton(x):
+    f_prime_x = f_prime(x)
+    f_double_prime_x = f_double_prime(x)
+
+    K_inf = f_double_prime_x / (2 * f_prime_x)
+    return K_inf
+
+x0 = 1 # Altere este valor conforme necessário
+
+K_inf = taxa_convergencia_newton(x0)
+
+print(f"Taxa de convergência (K_infinito) em x = {x0}: {K_inf: }")
+
 # Definição da função f(x) e sua derivada f'(x)
 def f(x):
     return 63*x**5 - 381*x**4 + 496*x**3 + 204*x**2 - 544*x + 192

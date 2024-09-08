@@ -1,5 +1,7 @@
 # Nome: João Pedro Pereira Balieiro
 # nUSP: 12676615
+# Nome: Lucas Fernando Nishida Dias
+# nUSP: 8936436
 
 # Método da Bissecção
 import numpy as np
@@ -47,7 +49,7 @@ bissecao_resultados = bissecao(f, 1, 2)
 # Mostrar o resultado do método da Bisseção
 if bissecao_resultados:
     def print_resultados_bissecao(resultados):
-        print("\nMétodo da Bisseção (Intervalo [0, 1]):")
+        print("\nMétodo da Bisseção (Intervalo [1, 2]):")
         print("Iteração |       a       |       b       |       x_k       |      f(x_k)     |       Erro")
         for it in resultados:
             print(f"{it[0]:>8} | {it[1]:>12.8f} | {it[2]:>12.8f} | {it[3]:>13.8f} | {it[4]:>13.8f} | {it[5]:>13.10f}")

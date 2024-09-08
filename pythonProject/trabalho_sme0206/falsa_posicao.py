@@ -1,5 +1,7 @@
 # Nome: João Pedro Pereira Balieiro
 # nUSP: 12676615
+# Nome: Lucas Fernando Nishida Dias
+# nUSP: 8936436
 
 # Método da Falsa Posição, o método das secantes sai do intervalo [1,2]
 import numpy as np

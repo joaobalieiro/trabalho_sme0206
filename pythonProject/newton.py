@@ -1,5 +1,7 @@
 # Nome: João Pedro Pereira Balieiro
 # nUSP: 12676615
+# Nome: Lucas Fernando Nishida Dias
+# nUSP: 8936436
 
 # Método de Newton
 import math
@@ -48,3 +50,44 @@ if newton_resultados:
         for it in resultados:
             print(f"{it[0]:>8} | {it[1]:>13.8f} | {it[2]:>13.8f} | {it[3]:>13.8f} | {it[4]:>13.10f}")
     print_resultados_newton(newton_resultados)
+
+# Está parte do código faz o calculo da taxa de convergencia teorica
+def f_prime(x):
+    return 315 * x ** 4 - 1524 * x ** 3 + 1488 * x ** 2 + 408 * x - 544
+
+def f_double_prime(x):
+    return 1260 * x ** 3 - 4572 * x ** 2 + 2976 * x + 408
+
+# Função para calcular a taxa de convergência
+def taxa_convergencia_newton(x):
+    f_prime_x = f_prime(x)
+    f_double_prime_x = f_double_prime(x)
+    K_inf = f_double_prime_x / (2 * f_prime_x)
+    return K_inf
+
+x0 = 2 # Altere este valor conforme necessário
+K_inf = taxa_convergencia_newton(x0)
+
+print(f"Taxa de convergência (K_infinito) em x = {x0}: {K_inf: .8f}")
+
+# Essa parte do codigo calcula a taxa de convergencia numerica
+def calcular_taxa_convergencia(iteracoes):
+    erros = [abs(iteracao[4]) for iteracao in iteracoes if iteracao[4] is not None and iteracao[4] != 0]
+    taxas = []
+    for i in range(1, len(erros) - 1):
+        erro_k = erros[i]
+        erro_k_1 = erros[i + 1]
+        erro_k_2 = erros[i - 1]
+
+        taxa = np.log(erro_k_1 / erro_k) / np.log(erro_k / erro_k_2)
+        taxas.append(taxa)
+    if taxas:
+        taxa_media = np.mean(taxas)
+        return taxa_media
+    else:
+        return None
+iteracoes = newton(f, df, 2)
+taxa_convergencia = calcular_taxa_convergencia(iteracoes)
+print(f"Taxa de Convergência: {taxa_convergencia: .8f}")
+
+
